@@ -25,7 +25,7 @@ export function Wallet() {
       <TabsContent value="ethereum">
         <Card className="flex flex-col items-center">
           <CardHeader>
-            <SelectWallet />
+            <SelectWallet network="eth" />
           </CardHeader>
           <CardContent className="space-y-24 text-center">
             <div className="space-y-1 ml-auto w-full">
@@ -41,7 +41,7 @@ export function Wallet() {
       <TabsContent value="solana">
         <Card className="flex flex-col items-center justify-center">
           <CardHeader>
-            <SelectWallet />
+            <SelectWallet network="solana" />
           </CardHeader>
           <CardContent className="space-y-24 text-center">
             <div className="space-y-1">

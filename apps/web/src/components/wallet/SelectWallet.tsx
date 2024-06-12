@@ -1,4 +1,4 @@
-import * as React from 'react';
+'use client';
 
 import {
   Select,
@@ -10,8 +10,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Button } from '../ui/button';
+import { useRouter } from 'next/navigation';
 
-export function SelectWallet() {
+export function SelectWallet({ network }: { network: string }) {
+  const router = useRouter();
   return (
     <Select>
       <SelectTrigger className="w-[180px]">
@@ -20,7 +22,12 @@ export function SelectWallet() {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>
-            <Button variant={'outline'}>Add Wallet</Button>
+            <Button
+              variant={'outline'}
+              onClick={() => router.push(`/onboarding/${network}/welcome`)}
+            >
+              Add Wallet
+            </Button>
           </SelectLabel>
           <SelectItem value="apple">Apple</SelectItem>
           <SelectItem value="banana">Banana</SelectItem>
